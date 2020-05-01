@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="DrawQuestionsApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DrawQuestionsApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewmodel="using:DrawQuestionsApp.viewmodel"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <viewmodel:MainVM></viewmodel:MainVM>
+    </Page.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="200px"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20">
+            <TextBlock Text="Choose No of Questions"  Margin="0,100,0,0" FontSize="14" FontWeight="Bold" FontFamily="Adobe Gothic Std B"></TextBlock>
+            <TextBox Text="{Binding SelectedNo, Mode=TwoWay}"  Margin="0,20,0,0" PlaceholderText="A number between 1-39"></TextBox>
+            <Button Content="Start" Command="{Binding Start}" Margin="0,20,0,0" HorizontalAlignment="Stretch"></Button>
+            <TextBlock Text="Remove taken question and shuffle" Margin="0,100,0,0" FontSize="14" FontWeight="Bold" FontFamily="Adobe Gothic Std B" TextWrapping="WrapWholeWords"></TextBlock>
+            <Button Content="Remove and Shuffle" Command="{Binding Shuffle}" Margin="0,20,0,0" HorizontalAlignment="Stretch"></Button>
+            <TextBlock Text="Taken numbers" Margin="0,100,0,0" FontSize="14" FontWeight="Bold" FontFamily="Adobe Gothic Std B"></TextBlock>
+            <GridView Margin="0,20,0,0" ItemsSource="{Binding TakenQuestions}">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding }" FontSize="14" FontWeight="Bold" FontFamily="Adobe Gothic Std B" Margin="1"></TextBlock>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </StackPanel>
+
+        <GridView Grid.Column="0" ItemsSource="{Binding Questions}" SelectedItem="{Binding SelectedQuestion, Mode=TwoWay}">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                        <Image Source="{Binding Current.Source}" Width="150" Height="150" Margin="15"></Image>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+        <!--<ListView Grid.Column="0" ItemsSource="{Binding Questions}" SelectedItem="{Binding SelectedQuestion, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Current.Source}" Width="150" Height="150" Margin="15"></Image>
+                        <Image Source="{Binding Current.Source}" Width="150" Height="150" Margin="15"></Image>
+                        <Image Source="{Binding Current.Source}" Width="150" Height="150" Margin="15"></Image>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+
+
+
+    </Grid>
+</Page>
