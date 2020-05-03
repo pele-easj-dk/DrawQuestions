@@ -1,0 +1,111 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\LockScreenLogo.scale-200.png" />
+    <None Remove="Resources\questions\01.png" />
+    <None Remove="Resources\questions\02.png" />
+    <None Remove="Resources\questions\03.png" />
+    <None Remove="Resources\questions\04.png" />
+    <None Remove="Resources\questions\05.png" />
+    <None Remove="Resources\questions\06.png" />
+    <None Remove="Resources\questions\07.png" />
+    <None Remove="Resources\questions\08.png" />
+    <None Remove="Resources\questions\09.png" />
+    <None Remove="Resources\questions\10.png" />
+    <None Remove="Resources\questions\11.png" />
+    <None Remove="Resources\questions\12.png" />
+    <None Remove="Resources\questions\13.png" />
+    <None Remove="Resources\questions\14.png" />
+    <None Remove="Resources\questions\15.png" />
+    <None Remove="Resources\questions\16.png" />
+    <None Remove="Resources\questions\17.png" />
+    <None Remove="Resources\questions\18.png" />
+    <None Remove="Resources\questions\19.png" />
+    <None Remove="Resources\questions\20.png" />
+    <None Remove="Resources\questions\21.png" />
+    <None Remove="Resources\questions\22.png" />
+    <None Remove="Resources\questions\23.png" />
+    <None Remove="Resources\questions\24.png" />
+    <None Remove="Resources\questions\25.png" />
+    <None Remove="Resources\questions\26.png" />
+    <None Remove="Resources\questions\27.png" />
+    <None Remove="Resources\questions\28.png" />
+    <None Remove="Resources\questions\29.png" />
+    <None Remove="Resources\questions\30.png" />
+    <None Remove="Resources\questions\31.png" />
+    <None Remove="Resources\questions\32.png" />
+    <None Remove="Resources\questions\33.png" />
+    <None Remove="Resources\questions\34.png" />
+    <None Remove="Resources\questions\35.png" />
+    <None Remove="Resources\questions\36.png" />
+    <None Remove="Resources\questions\37.png" />
+    <None Remove="Resources\questions\38.png" />
+    <None Remove="Resources\questions\39.png" />
+    <None Remove="Resources\questions\Back.png" />
+    <None Remove="Resources\questions\Blank.png" />
+    <None Remove="Resources\SplashScreen.scale-200.png" />
+    <None Remove="Resources\Square150x150Logo.scale-200.png" />
+    <None Remove="Resources\Square44x44Logo.scale-200.png" />
+    <None Remove="Resources\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <None Remove="Resources\StoreLogo.png" />
+    <None Remove="Resources\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\LockScreenLogo.scale-200.png" />
+    <Content Include="Resources\questions\01.png" />
+    <Content Include="Resources\questions\02.png" />
+    <Content Include="Resources\questions\03.png" />
+    <Content Include="Resources\questions\04.png" />
+    <Content Include="Resources\questions\05.png" />
+    <Content Include="Resources\questions\06.png" />
+    <Content Include="Resources\questions\07.png" />
+    <Content Include="Resources\questions\08.png" />
+    <Content Include="Resources\questions\09.png" />
+    <Content Include="Resources\questions\10.png" />
+    <Content Include="Resources\questions\11.png" />
+    <Content Include="Resources\questions\12.png" />
+    <Content Include="Resources\questions\13.png" />
+    <Content Include="Resources\questions\14.png" />
+    <Content Include="Resources\questions\15.png" />
+    <Content Include="Resources\questions\16.png" />
+    <Content Include="Resources\questions\17.png" />
+    <Content Include="Resources\questions\18.png" />
+    <Content Include="Resources\questions\19.png" />
+    <Content Include="Resources\questions\20.png" />
+    <Content Include="Resources\questions\21.png" />
+    <Content Include="Resources\questions\22.png" />
+    <Content Include="Resources\questions\23.png" />
+    <Content Include="Resources\questions\24.png" />
+    <Content Include="Resources\questions\25.png" />
+    <Content Include="Resources\questions\26.png" />
+    <Content Include="Resources\questions\27.png" />
+    <Content Include="Resources\questions\28.png" />
+    <Content Include="Resources\questions\29.png" />
+    <Content Include="Resources\questions\30.png" />
+    <Content Include="Resources\questions\31.png" />
+    <Content Include="Resources\questions\32.png" />
+    <Content Include="Resources\questions\33.png" />
+    <Content Include="Resources\questions\34.png" />
+    <Content Include="Resources\questions\35.png" />
+    <Content Include="Resources\questions\36.png" />
+    <Content Include="Resources\questions\37.png" />
+    <Content Include="Resources\questions\38.png" />
+    <Content Include="Resources\questions\39.png" />
+    <Content Include="Resources\questions\Back.png" />
+    <Content Include="Resources\questions\Blank.png" />
+    <Content Include="Resources\SplashScreen.scale-200.png" />
+    <Content Include="Resources\Square150x150Logo.scale-200.png" />
+    <Content Include="Resources\Square44x44Logo.scale-200.png" />
+    <Content Include="Resources\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Resources\StoreLogo.png" />
+    <Content Include="Resources\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+
+</Project>
