@@ -7,7 +7,7 @@ namespace DrawQuestionDesktopApp.model
     public class Question
     {
         private Image _questionFront;
-        private Image _questionBack;
+        private static Image _questionBack = new Image(){Source = new BitmapImage(new Uri("Resources/questions/Back.png", UriKind.Relative)) };
         private int _number;
 
         public Image QuestionFront => _questionFront;
@@ -20,13 +20,9 @@ namespace DrawQuestionDesktopApp.model
         {
             _number = no;
 
-            _questionBack = new Image();
-            _questionBack.Source = new BitmapImage(new Uri("Resources/questions/Back.png", UriKind.Relative));
-            //_questionBack.Source = new BitmapImage(new Uri("pack://application:,,,/DrawQuestionDesktopApp;component/Resources/questions/Back.png"));
-
             _questionFront = new Image();
             String filename = (no < 10) ? "0" + no : ""+no;
-            _questionFront.Source = new BitmapImage(new Uri($"/Resources/questions/{filename}.png", UriKind.Relative));
+            _questionFront.Source = new BitmapImage(new Uri($"Resources/questions/{filename}.png", UriKind.Relative));
         }
 
     }

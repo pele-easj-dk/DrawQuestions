@@ -3,10 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DrawQuestionDesktopApp"
         xmlns:viewmodel="clr-namespace:DrawQuestionDesktopApp.viewmodel"
         mc:Ignorable="d"
-        Title="Draw Question App" Height="600" Width="1000">
+        Title="Draw Question App" Height="800" Width="1200">
     <Window.DataContext>
         <viewmodel:MainVM></viewmodel:MainVM>
     </Window.DataContext>
@@ -16,14 +15,25 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="200px"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100px"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="100px"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding Header}" Grid.Column="0" Grid.Row="0" FontFamily="Zealand Display" FontSize="72" HorizontalAlignment="Center" ></TextBlock>
+        <StackPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+            <Image Source="{Binding FooterImg}"></Image>
+        </StackPanel>
 
-        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20">
-            <TextBlock Text="Choose No of Questions"  Margin="0,10,0,0" FontSize="14" FontWeight="Bold" FontFamily="Adobe Gothic Std B"></TextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Margin="20">
+            <TextBlock Text="Choose Name of Exam"  Margin="0,10,0,0" FontSize="12" FontWeight="Bold" FontFamily="Adobe Gothic Std B" ></TextBlock>
+            <TextBox Text="{Binding Header, Mode=TwoWay}"  Margin="0,10,0,0" ></TextBox>
+            <TextBlock Text="Choose No of Questions"  Margin="0,10,0,0" FontSize="12" FontWeight="Bold" FontFamily="Adobe Gothic Std B"></TextBlock>
             <TextBox Text="{Binding SelectedNo, Mode=TwoWay}"  Margin="0,10,0,0"></TextBox>
             <Button Content="Start" Command="{Binding Start}" IsEnabled="{Binding IsNotStartet}" Margin="0,10,0,0" HorizontalAlignment="Stretch"></Button>
-            <TextBlock Text="Remove taken question and shuffle" Margin="0,50,0,0" FontSize="14" FontWeight="Bold" FontFamily="Adobe Gothic Std B" TextWrapping="Wrap" ></TextBlock>
+            <TextBlock Text="Remove taken question and shuffle" Margin="0,50,0,0" FontSize="12" FontWeight="Bold" FontFamily="Adobe Gothic Std B" TextWrapping="Wrap" ></TextBlock>
             <Button Content="Remove and Shuffle" Command="{Binding Shuffle}" IsEnabled="{Binding IsStartet}" Margin="0,10,0,0" HorizontalAlignment="Stretch"></Button>
-            <TextBlock Text="Taken numbers" Margin="0,50,0,0" FontSize="14" FontWeight="Bold" FontFamily="Adobe Gothic Std B"></TextBlock>
+            <TextBlock Text="Taken numbers" Margin="0,50,0,0" FontSize="12" FontWeight="Bold" FontFamily="Adobe Gothic Std B"></TextBlock>
             <ItemsControl ItemsSource="{Binding TakenQuestions}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -38,7 +48,7 @@
             </ItemsControl>
         </StackPanel>
 
-        <ListView Grid.Column="0" ItemsSource="{Binding Questions}"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectedItem="{Binding SelectedQuestion, Mode=TwoWay}">
+        <ListView Grid.Column="0" Grid.Row="1" ItemsSource="{Binding Questions}"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectedItem="{Binding SelectedQuestion, Mode=TwoWay}">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" />

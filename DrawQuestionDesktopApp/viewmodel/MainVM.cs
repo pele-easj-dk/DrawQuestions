@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using DrawQuestionDesktopApp.common;
 using DrawQuestionDesktopApp.model;
 using DrawQuestionDesktopApp.viewmodel.handler;
@@ -12,6 +15,8 @@ namespace DrawQuestionDesktopApp.viewmodel
     public class MainVM:INotifyPropertyChanged
     {
         private static readonly Random _rand = new Random(DateTime.Now.Millisecond);
+        private static ImageSource _footerImg = new BitmapImage(new Uri($"Resources/questions/Zealand.png", UriKind.Relative));
+
 
         private ObservableCollection<QuestionView> _questions;
         private ObservableCollection<int> _takenQuestions;
@@ -20,7 +25,8 @@ namespace DrawQuestionDesktopApp.viewmodel
         private readonly RelayCommand _shuffle;
         private readonly RelayCommand _start;
         private bool _isNotStartet;
-
+        private string _header;
+        
         public MainVM()
         {
             _questions = new ObservableCollection<QuestionView>();
@@ -29,9 +35,8 @@ namespace DrawQuestionDesktopApp.viewmodel
             _start = new RelayCommand(StartUpQuestions);
             _isNotStartet = true;
             _selectedNo = 0;
+            _header = "";
         }
-
-        
 
 
         public RelayCommand Shuffle => _shuffle;
@@ -42,6 +47,17 @@ namespace DrawQuestionDesktopApp.viewmodel
         public bool IsStartet => IsStartetMethod();
         public bool IsNotStartet => IsNotStartetMethod();
 
+        public ImageSource FooterImg => _footerImg;
+
+        public string Header
+        {
+            get => _header;
+            set
+            {
+                _header = value;
+                OnPropertyChanged("Header");
+            }
+        }
 
         public int SelectedNo
         {
@@ -64,9 +80,7 @@ namespace DrawQuestionDesktopApp.viewmodel
 
         private void StartUpQuestions()
         {
-            _isNotStartet = false;
-            OnPropertyChanged("IsStartet");
-            OnPropertyChanged("IsNotStartet");
+            SetIsNotStartet(false);
             GenerateQuestions(_selectedNo);
             ShuffleQuestions();
             _takenQuestions.Clear();
@@ -93,10 +107,15 @@ namespace DrawQuestionDesktopApp.viewmodel
 
             if (_questions.Count == 0)
             {
-                _isNotStartet = true;
-                OnPropertyChanged("IsStartet");
-                OnPropertyChanged("IsNotStartet");
+                SetIsNotStartet(true);
             }
+        }
+
+        private void SetIsNotStartet(bool isNotStartet)
+        {
+            _isNotStartet = isNotStartet;
+            OnPropertyChanged("IsStartet");
+            OnPropertyChanged("IsNotStartet");
         }
 
         private void GenerateQuestions(int selectedNo)
