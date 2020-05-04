@@ -16,6 +16,7 @@ namespace DrawQuestionDesktopApp.viewmodel
     {
         private static readonly Random _rand = new Random(DateTime.Now.Millisecond);
         private static ImageSource _footerImg = new BitmapImage(new Uri($"Resources/questions/Zealand.png", UriKind.Relative));
+        private static ImageSource _headerImg = new BitmapImage(new Uri($"Resources/questions/ZealandBlank.png", UriKind.Relative));
 
 
         private ObservableCollection<QuestionView> _questions;
@@ -48,6 +49,8 @@ namespace DrawQuestionDesktopApp.viewmodel
         public bool IsNotStartet => IsNotStartetMethod();
 
         public ImageSource FooterImg => _footerImg;
+
+        public ImageSource HeaderImg => _headerImg;
 
         public string Header
         {

@@ -49,6 +49,8 @@
     <None Remove="Resources\questions\39.png" />
     <None Remove="Resources\questions\Back.png" />
     <None Remove="Resources\questions\Blank.png" />
+    <None Remove="Resources\questions\Zealand.png" />
+    <None Remove="Resources\questions\ZealandBlank.png" />
     <None Remove="Resources\SplashScreen.scale-200.png" />
     <None Remove="Resources\Square150x150Logo.scale-200.png" />
     <None Remove="Resources\Square44x44Logo.scale-200.png" />
@@ -100,6 +102,8 @@
     <Content Include="Resources\questions\39.png" />
     <Content Include="Resources\questions\Back.png" />
     <Content Include="Resources\questions\Blank.png" />
+    <Content Include="Resources\questions\Zealand.png" />
+    <Content Include="Resources\questions\ZealandBlank.png" />
     <Content Include="Resources\SplashScreen.scale-200.png" />
     <Content Include="Resources\Square150x150Logo.scale-200.png" />
     <Content Include="Resources\Square44x44Logo.scale-200.png" />

@@ -20,9 +20,19 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="100px"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Text="{Binding Header}" Grid.Column="0" Grid.Row="0" FontFamily="Zealand Display" FontSize="72" HorizontalAlignment="Center" ></TextBlock>
+
+        <StackPanel  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" UseLayoutRounding="False">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="{Binding HeaderImg}"></ImageBrush>
+            </StackPanel.Background>
+            <TextBlock Text="{Binding Header}" FontFamily="Zealand Display" FontSize="65" HorizontalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="{Binding HeaderImg}"></ImageBrush>
+                </TextBlock.Background>
+            </TextBlock>
+        </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
-            <Image Source="{Binding FooterImg}"></Image>
+        <Image Source="{Binding FooterImg}" ></Image>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Margin="20">
